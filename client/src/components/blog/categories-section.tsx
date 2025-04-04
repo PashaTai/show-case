@@ -16,7 +16,7 @@ export default function CategoriesSection() {
           {categories.map((category, index) => (
             <div 
               key={index}
-              className="group relative bg-white border border-slate-200 rounded-lg flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="group relative bg-white border border-slate-200 rounded-lg flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full"
             >
               <div className="h-48 bg-primary group-hover:opacity-75 transition-opacity duration-300">
                 <img 
@@ -29,16 +29,16 @@ export default function CategoriesSection() {
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-slate-900">
                     <Link href={`/blog?category=${category.slug}`}>
-                      <a className="hover:underline">{category.title}</a>
+                      <span className="hover:underline cursor-pointer">{category.title}</span>
                     </Link>
                   </h3>
                   <p className="mt-3 text-base text-slate-500">{category.description}</p>
                 </div>
                 <div className="mt-6">
                   <Link href={`/blog?category=${category.slug}`}>
-                    <a className="text-base font-medium text-primary hover:text-primary-700 inline-flex items-center">
+                    <span className="text-base font-medium text-primary hover:text-primary-700 inline-flex items-center cursor-pointer">
                       View articles <ArrowRight className="ml-1 h-4 w-4" />
-                    </a>
+                    </span>
                   </Link>
                 </div>
               </div>

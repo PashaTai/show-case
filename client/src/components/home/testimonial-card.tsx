@@ -27,8 +27,8 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   };
 
   return (
-    <Card className="bg-white shadow rounded-lg overflow-hidden">
-      <CardContent className="px-6 py-8">
+    <Card className="bg-white shadow rounded-lg overflow-hidden flex flex-col h-full">
+      <CardContent className="px-6 py-8 flex-grow">
         <div className="flex items-center mb-4">
           <div className="flex-shrink-0">
             <Avatar className="h-10 w-10">

@@ -38,8 +38,8 @@ export default function Achievements() {
         <div className="mt-16">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="bg-slate-50 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300">
-                <CardContent className="p-6">
+              <Card key={index} className="bg-slate-50 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+                <CardContent className="p-6 flex-grow">
                   <div className="flex items-center mb-4">
                     {renderIcon(achievement.iconName, achievement.iconColor)}
                     <h3 className="ml-3 text-lg font-bold text-slate-900">{achievement.title}</h3>

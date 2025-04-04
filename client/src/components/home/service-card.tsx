@@ -24,8 +24,8 @@ export default function ServiceCard({ service }: ServiceCardProps) {
   };
 
   return (
-    <Card className="bg-white overflow-hidden shadow rounded-lg border border-slate-200 hover:shadow-md transition-shadow duration-300">
-      <CardContent className="px-4 py-5 sm:p-6">
+    <Card className="bg-white overflow-hidden shadow rounded-lg border border-slate-200 hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+      <CardContent className="px-4 py-5 sm:p-6 flex-grow">
         <div className="rounded-full bg-primary-100 w-12 h-12 flex items-center justify-center mb-4">
           {renderIcon(service.iconName)}
         </div>
@@ -46,7 +46,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           ))}
         </ul>
       </CardContent>
-      <CardFooter className="bg-slate-50 px-4 py-4 sm:px-6">
+      <CardFooter className="bg-slate-50 px-4 py-4 sm:px-6 mt-auto">
         <Button asChild className="w-full">
           <Link href="/#contact">Get Started</Link>
         </Button>

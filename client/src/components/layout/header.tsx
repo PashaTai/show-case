@@ -12,14 +12,16 @@ export default function Header() {
     const isActive = location === href;
 
     return (
-      <Link href={href}>
-        <a className={cn(
-          "text-slate-900 hover:text-primary font-medium px-3 py-2 rounded-md text-sm",
-          isActive && "text-primary"
-        )}>
-          {children}
-        </a>
-      </Link>
+      <div className="inline-block">
+        <Link href={href}>
+          <span className={cn(
+            "text-slate-900 hover:text-primary font-medium px-3 py-2 rounded-md text-sm cursor-pointer inline-block",
+            isActive && "text-primary"
+          )}>
+            {children}
+          </span>
+        </Link>
+      </div>
     );
   };
 
@@ -29,7 +31,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/">
-              <a className="font-bold text-xl text-primary">Andrew Ivanov</a>
+              <span className="font-bold text-xl text-primary cursor-pointer">Andrew Ivanov</span>
             </Link>
           </div>
           
@@ -38,9 +40,13 @@ export default function Header() {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/biography">Biography</NavLink>
             <NavLink href="/blog">Blog</NavLink>
-            <Button asChild size="sm" className="ml-4">
-              <Link href="/#contact">Contact</Link>
-            </Button>
+            <div className="inline-block ml-4">
+              <Link href="/#contact">
+                <Button size="sm" asChild>
+                  <span>Contact</span>
+                </Button>
+              </Link>
+            </div>
           </nav>
           
           {/* Mobile Menu Button */}
@@ -65,45 +71,45 @@ export default function Header() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
               <Link href="/">
-                <a 
+                <span 
                   className={cn(
-                    "block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white",
+                    "block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white cursor-pointer",
                     location === "/" ? "bg-primary text-white" : "text-slate-900"
                   )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Home
-                </a>
+                </span>
               </Link>
               <Link href="/biography">
-                <a 
+                <span 
                   className={cn(
-                    "block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white",
+                    "block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white cursor-pointer",
                     location === "/biography" ? "bg-primary text-white" : "text-slate-900"
                   )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Biography
-                </a>
+                </span>
               </Link>
               <Link href="/blog">
-                <a 
+                <span 
                   className={cn(
-                    "block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white",
+                    "block px-3 py-2 rounded-md text-base font-medium hover:bg-primary hover:text-white cursor-pointer",
                     location === "/blog" ? "bg-primary text-white" : "text-slate-900"
                   )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Blog
-                </a>
+                </span>
               </Link>
               <Link href="/#contact">
-                <a 
-                  className="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white hover:bg-primary-700"
+                <span 
+                  className="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white hover:bg-primary-700 cursor-pointer"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Contact
-                </a>
+                </span>
               </Link>
             </div>
           </div>

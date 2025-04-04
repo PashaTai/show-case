@@ -24,7 +24,7 @@ export default function FeaturedArticles() {
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-8 lg:grid-cols-3 lg:max-w-none">
           {featuredPosts.map((post) => (
-            <Card key={post.id} className="flex flex-col overflow-hidden">
+            <Card key={post.id} className="flex flex-col overflow-hidden h-full">
               <div className="flex-shrink-0">
                 <img 
                   className="h-48 w-full object-cover" 
@@ -36,14 +36,14 @@ export default function FeaturedArticles() {
                 <div className="flex-1">
                   <p className="text-sm font-medium text-primary">
                     <Link href={`/blog?category=${post.category}`}>
-                      <a className="hover:underline">{post.category}</a>
+                      <span className="hover:underline cursor-pointer">{post.category}</span>
                     </Link>
                   </p>
                   <Link href={`/blog/${post.slug}`}>
-                    <a className="block mt-2">
+                    <div className="block mt-2 cursor-pointer">
                       <p className="text-xl font-semibold text-slate-900">{post.title}</p>
                       <p className="mt-3 text-base text-slate-500">{post.excerpt}</p>
-                    </a>
+                    </div>
                   </Link>
                 </div>
                 <div className="mt-6 flex items-center">

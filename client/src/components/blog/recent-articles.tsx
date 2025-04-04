@@ -104,24 +104,24 @@ export default function RecentArticles() {
         </div>
         <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-12">
           {recentPosts.map((post) => (
-            <div key={post.id}>
+            <div key={post.id} className="flex flex-col h-full">
               <p className="text-sm text-primary">
                 <Link href={`/blog?category=${post.category}`}>
-                  <a className="hover:underline">{post.category}</a>
+                  <span className="hover:underline cursor-pointer">{post.category}</span>
                 </Link>
               </p>
               <Link href={`/blog/${post.slug}`}>
-                <a className="mt-2 block">
+                <div className="mt-2 block cursor-pointer flex-grow">
                   <p className="text-xl font-semibold text-slate-900">{post.title}</p>
                   <p className="mt-3 text-base text-slate-500">{post.excerpt}</p>
-                </a>
+                </div>
               </Link>
               <div className="mt-3">
                 <Link href={`/blog/${post.slug}`}>
-                  <a className="text-base font-semibold text-primary hover:text-primary-700 inline-flex items-center">
+                  <span className="text-base font-semibold text-primary hover:text-primary-700 inline-flex items-center cursor-pointer">
                     Read full article 
                     <ArrowRight className="ml-1 h-4 w-4" />
-                  </a>
+                  </span>
                 </Link>
               </div>
             </div>
