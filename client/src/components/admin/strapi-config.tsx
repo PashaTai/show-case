@@ -25,7 +25,7 @@ export default function StrapiConfig() {
   const savedConfig = localStorage.getItem('strapiConfig');
   const defaultValues = savedConfig 
     ? JSON.parse(savedConfig) 
-    : { strapiUrl: 'http://localhost:1337', apiToken: '' };
+    : { strapiUrl: 'https://api.strapi.io', apiToken: '' };
   
   // Initialize form with default values
   const form = useForm<StrapiConfigFormValues>({
@@ -101,7 +101,7 @@ export default function StrapiConfig() {
                     <Input placeholder="https://your-strapi-cms.com" {...field} />
                   </FormControl>
                   <FormDescription>
-                    The URL of your Strapi CMS instance
+                    The URL of your Strapi Cloud instance (e.g., https://your-project.api.strapi.io)
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -136,6 +136,16 @@ export default function StrapiConfig() {
         <p>
           Note: Configuration is stored in your browser's local storage.
         </p>
+        <div className="mt-4 p-3 bg-slate-50 rounded-md">
+          <p className="font-medium mb-2">Strapi Cloud Setup:</p>
+          <ol className="list-decimal pl-5 space-y-1">
+            <li>Create an account on <a href="https://cloud.strapi.io" target="_blank" rel="noopener" className="text-blue-500 hover:underline">Strapi Cloud</a></li>
+            <li>Create a new project</li>
+            <li>Set up your content types (articles, categories, authors)</li>
+            <li>Generate an API token in Settings → API Tokens</li>
+            <li>Enter your project URL and API token above</li>
+          </ol>
+        </div>
       </CardFooter>
     </Card>
   );
